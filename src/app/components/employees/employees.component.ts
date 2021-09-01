@@ -7,7 +7,7 @@ import { DataService } from 'src/app/service/data.service';
   styleUrls: ['./employees.component.css']
 })
 export class EmployeesComponent implements OnInit {
-  employee:any;
+  employees:any;
 
   constructor(private dataService:DataService) { }
 
@@ -17,9 +17,9 @@ export class EmployeesComponent implements OnInit {
 
   getEmployeeData(){
     //console.log('Hello Employees');
-    //getData--->service/dataservice.ts
     this.dataService.getData().subscribe(res => {
-      console.log(res);
+      //console.log(res);
+      this.employees = res;
     });
   }
 
