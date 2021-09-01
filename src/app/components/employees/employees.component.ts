@@ -16,7 +16,11 @@ export class EmployeesComponent implements OnInit {
   }
 
   getEmployeeData(){
-    console.log('Hello Employees');
+    //console.log('Hello Employees');
+    //getData--->service/dataservice.ts
+    this.dataService.getData().subscribe(res => {
+      console.log(res);
+    });
   }
 
 }
