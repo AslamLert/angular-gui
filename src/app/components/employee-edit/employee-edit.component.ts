@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { DataService } from 'src/app/service/data.service';
 
 @Component({
   selector: 'app-employee-edit',
@@ -7,12 +8,20 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./employee-edit.component.css']
 })
 export class EmployeeEditComponent implements OnInit {
+  id:any;
 
-  constructor(private route:ActivatedRoute) { }
+  constructor(private route:ActivatedRoute, private dataServices: DataService) { }
 
   ngOnInit(): void {
-    console.log(this.route.snapshot.params.id);
+    //console.log(this.route.snapshot.params.id);
+    this.id = this.route.snapshot.params.id;
+    this.getData();
+  }
 
+  getData(){
+    this.dataServices.getEmployeeById(this.id).subscribe(res => {
+      console.log(res);
+    })
   }
 
 }
