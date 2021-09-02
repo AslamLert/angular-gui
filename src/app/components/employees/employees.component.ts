@@ -27,7 +27,11 @@ export class EmployeesComponent implements OnInit {
 
   insertData(){
     //console.log('Hello')
-    console.log(this.employee);
+    //console.log(this.employee);
+    this.dataService.insertData(this.employee).subscribe(res => {
+      //console.log(res);
+      this.getEmployeeData();
+    });
   }
 
 }
