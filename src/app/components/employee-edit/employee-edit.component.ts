@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Employee } from 'src/app/employee';
 import { DataService } from 'src/app/service/data.service';
 
 @Component({
@@ -9,6 +10,8 @@ import { DataService } from 'src/app/service/data.service';
 })
 export class EmployeeEditComponent implements OnInit {
   id:any;
+  data:any;
+  employee = new Employee();
 
   constructor(private route:ActivatedRoute, private dataServices: DataService) { }
 
@@ -20,7 +23,9 @@ export class EmployeeEditComponent implements OnInit {
 
   getData(){
     this.dataServices.getEmployeeById(this.id).subscribe(res => {
-      console.log(res);
+      //console.log(res);
+      this.data = res;
+      this.employee = this.data;
     })
   }
 
