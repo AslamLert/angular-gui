@@ -23,4 +23,8 @@ export class EmployeesComponent implements OnInit {
     });
   }
 
+  insertData(){
+    console.log('Hello')
+  }
+
 }
