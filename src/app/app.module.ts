@@ -8,6 +8,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { EmployeesComponent } from './components/employees/employees.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { EmployeeEditComponent } from './components/employee-edit/employee-edit.component';
 
 const appRoutes: Routes = [
   {path: '', component: EmployeesComponent}
@@ -17,7 +18,8 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     EmployeesComponent,
-    NavbarComponent
+    NavbarComponent,
+    EmployeeEditComponent
   ],
   imports: [
     BrowserModule,
