@@ -29,4 +29,10 @@ export class EmployeeEditComponent implements OnInit {
     })
   }
 
+  updateEmployee() {
+    this.dataServices.updateEmployee(this.id, this.employee).subscribe(res => {
+
+    })
+  }
+
 }
